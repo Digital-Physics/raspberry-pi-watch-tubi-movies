@@ -41,11 +41,15 @@ elif site == "tubi":
   full_screen_btn = driver.find_element(By.CSS_SELECTOR, "span#fullscreenArea button.web-iconButton-container")
   full_screen_btn.click()
 
+  time.sleep(10)
+
+  # Locate the video element
+  video = driver.find_element(By.TAG_NAME, 'video')
+
   # jump ahead
-  jump = driver.find_element(By.TAG_NAME, 'body')
-  #for _ in range(5):
-    #time.sleep(1)
-    #jump.send_keys(Keys.ARROW_DOWN + 'l') # jump 30 seconds ahead
+  # Set the video time to your desired time in seconds since you can't add it to the URL in Tubi
+  desired_time = 71*60
+  driver.execute_script(f"arguments[0].currentTime = {desired_time};", video)
 
 # don't let this script complete or your webdriver will go away
 while True:
