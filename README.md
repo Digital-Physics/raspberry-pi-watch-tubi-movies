@@ -8,9 +8,9 @@ Update the the movie URL in the file as desidre on your Raspberry Pi using "nano
 
 Audio Note: Static was encountered on our Bluetooth speaker that was connected to the Raspberry Pi 4 model b.
 To avoid it, open the config file with "sudo nano /boot/config.txt" and add this line to the config.txt file:
-"audio_pwm_mode=2"
+"audio_pwm_mode=2". We've also noticed that having the bluetooth speaker on before the Raspberry Pi is turned
+on is helpful for avoiding audio static.
 
-Code Note: This code is somewhat dependent on the current tubi and youtube UI, so you may need to update it if things change.
 
 
 
